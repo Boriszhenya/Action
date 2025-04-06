@@ -113,9 +113,10 @@ public class FileUploadTest extends BaseTest{
         String actualText = driver.findElement(By.xpath("(//*[@class='dz-details'])[1]")).getText();
         System.out.println(actualText);
         assertEquals("logback.xml", actualText);
-        Thread.sleep(1500);
-        driver.findElement(By.id("file-submit")).click();
+
         /*--эта часть не работает так как сайт выдает ошибку "Internal Server Error"--*/
+        //Thread.sleep(1500);
+        //driver.findElement(By.id("file-submit")).click();
         //String actualText1 = driver.findElement(By.id("uploaded-files")).getText();
         //System.out.println(actualText1);
         //assertEquals("logback.xml", actualText);
