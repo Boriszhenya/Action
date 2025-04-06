@@ -61,7 +61,7 @@ public class ActionsTest extends BaseTest {
         System.out.println("verifyMessage.getText() = " + verifyMessage.getText());
 
         assertTrue(verifyMessage.isDisplayed());
-        assertEquals(verifyMessage.getText(), "Dropped!", "verify that element has dropped");
+        assertEquals("Dropped!", verifyMessage.getText(), "verify that element has dropped");
 
     }
 
@@ -78,7 +78,7 @@ public class ActionsTest extends BaseTest {
         System.out.println("verifyMessage.getText() = " + verifyMessage.getText());
 
         assertTrue(verifyMessage.isDisplayed());
-        assertEquals(verifyMessage.getText(), "Dropped!", "verify that element has dropped");
+        assertEquals("Dropped!", verifyMessage.getText(), "verify that element has dropped");
 
     }
 
