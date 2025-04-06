@@ -26,16 +26,8 @@ public class BaseTest {
         // Получаем последнюю версию драйвера браузера Chrome
         WebDriverManager.chromedriver().setup();
 
-        ChromeOptions options = new ChromeOptions();
-        Map<String, Object> prefs = new HashMap<String, Object>();
-        Map<String, Object> profile = new HashMap<String, Object>();
-        Map<String, Object> contentSettings = new HashMap<String, Object>();
+        ChromeOptions options = getChromeOptions();
 
-        //profile.put("managed_default_content_settings",contentSettings);
-        prefs.put("profile",profile);
-        options.setExperimentalOption("prefs",prefs);
-        options.addArguments("--start-maximized");
-        options.addArguments("--ignore-certificate-errors");
         // Создаём новый объект класса ChromeDriver
         driver = new ChromeDriver(options);
         //driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10000));
@@ -47,6 +39,20 @@ public class BaseTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    private static ChromeOptions getChromeOptions() {
+        ChromeOptions options = new ChromeOptions();
+        Map<String, Object> prefs = new HashMap<String, Object>();
+        Map<String, Object> profile = new HashMap<String, Object>();
+        Map<String, Object> contentSettings = new HashMap<String, Object>();
+
+        //profile.put("managed_default_content_settings",contentSettings);
+        prefs.put("profile",profile);
+        options.setExperimentalOption("prefs",prefs);
+        options.addArguments("--start-maximized");
+        options.addArguments("--ignore-certificate-errors");
+        return options;
     }
 
     @AfterEach

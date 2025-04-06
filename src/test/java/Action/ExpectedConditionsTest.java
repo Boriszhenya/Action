@@ -65,8 +65,9 @@ public class ExpectedConditionsTest extends BaseTest {
     public void waitForAllElements() {
         driver.get("https://demo.aspnetawesome.com/");
 
-        List<WebElement> tablesList = wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.tagName("table"), 2));
+        List<WebElement> tablesList = wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//table"), 2));
 
         assertTrue(tablesList.size() > 3, String.format("Actual tables count: %s", tablesList.size()));
+        //не проходит из-за масштаба странички, табличка не попадает в первую видимую страничку
     }
 }
