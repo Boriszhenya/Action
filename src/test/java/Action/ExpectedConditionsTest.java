@@ -67,6 +67,6 @@ public class ExpectedConditionsTest extends BaseTest {
         List<WebElement> tablesList = wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//table"), 2));
 
         assertTrue(tablesList.size() >= 3, String.format("Actual tables count: %s", tablesList.size()));
-        //не проходит из-за масштаба странички, табличка не попадает в первую видимую страничку
+
     }
 }

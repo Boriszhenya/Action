@@ -3,7 +3,6 @@ package Action;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-//import org.openqa.selenium.interactions.Actions;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
@@ -12,7 +11,7 @@ import java.awt.event.KeyEvent;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class FileUploadTest extends BaseTest{
+public class FileUploadTest extends BaseTest {
 
     @Test
     public void uploadDirectSendKeysTest() throws InterruptedException {
@@ -23,8 +22,8 @@ public class FileUploadTest extends BaseTest{
 
         WebElement chooseFile = driver.findElement(By.cssSelector("#file-upload"));
         String projectPath = System.getProperty("user.dir");
-        String filePath ="src/main/resources/logback.xml";
-        String fullPath = projectPath+"/"+filePath;
+        String filePath = "src/main/resources/logback.xml";
+        String fullPath = projectPath + "/" + filePath;
 
         System.out.println(fullPath);
 
@@ -35,7 +34,8 @@ public class FileUploadTest extends BaseTest{
         assertEquals("logback.xml", actualText);
         Thread.sleep(5000);
     }
-/*---это костыль под Unix системы - нет возможности проверить----*/
+
+    /*---это костыль под Unix системы - нет возможности проверить----*/
     @Test
     public void dialogUploadTestUnix() throws InterruptedException, AWTException {
         System.out.println("System.setProperty(\"user.dir\") = " + System.getProperty("user.dir"));
@@ -45,8 +45,8 @@ public class FileUploadTest extends BaseTest{
 
         WebElement chooseFile = driver.findElement(By.cssSelector("#drag-drop-upload"));
         String projectPath = System.getProperty("user.dir");
-        String filePath ="src/main/resources/logback.xml";
-        String fullPath = projectPath+"/"+filePath;
+        String filePath = "src/main/resources/logback.xml";
+        String fullPath = projectPath + "/" + filePath;
         System.out.println(fullPath);
         Thread.sleep(1500);
         chooseFile.click();
@@ -80,7 +80,8 @@ public class FileUploadTest extends BaseTest{
         assertEquals("logback.xml", actualText);
         Thread.sleep(5000);
     }
-/*--- это костыль под Windows---*/
+
+    /*--- это костыль под Windows---*/
     @Test
     public void dialogUploadTestWindows() throws InterruptedException, AWTException {
         System.out.println("System.setProperty(\"user.dir\") = " + System.getProperty("user.dir"));
@@ -90,8 +91,8 @@ public class FileUploadTest extends BaseTest{
 
         WebElement chooseFile = driver.findElement(By.cssSelector("#drag-drop-upload"));
         String projectPath = System.getProperty("user.dir");
-        String filePath ="src\\main\\resources\\logback.xml";
-        String fullPath = projectPath+"\\"+filePath;
+        String filePath = "src\\main\\resources\\logback.xml";
+        String fullPath = projectPath + "\\" + filePath;
         System.out.println(fullPath);
         Thread.sleep(1500);
         actions.moveToElement(chooseFile).click().perform();
