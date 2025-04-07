@@ -68,16 +68,17 @@ public class ActionsTest extends BaseTest {
     }
 
     @Test
-    public void dragAndDropByTest() throws InterruptedException {
+    public void dragAndDropByTest() {
 
         driver.get("https://demoqa.com/droppable");
 
         WebElement source = driver.findElement(By.cssSelector("#draggable"));
-
+        wait.until(ExpectedConditions.visibilityOf(source));
         actions.dragAndDropBy(source, 355, 50).perform();
 
+
         WebElement verifyMessage = driver.findElement(By.xpath("//p[text()='Dropped!']"));
-        //переодически тест не проходит так как на страничке появляется реклама на месте где должны быть наши элементы
+        //периодически тест не проходит
 
         wait.until(ExpectedConditions.visibilityOf(verifyMessage));
         System.out.println("verifyMessage.getText() = " + verifyMessage.getText());
@@ -96,7 +97,7 @@ public class ActionsTest extends BaseTest {
         WebElement target = driver.findElement(By.xpath("(//div[@id='droppable'])[1]"));
 
         actions.moveToElement(source).clickAndHold().moveToElement(target).pause(100).release().perform();
-        //переодически тест не проходит так как на страничке появляется реклама на месте где должны быть наши элементы
+        //периодически тест не проходит
 
         WebElement verifyMessage = driver.findElement(By.xpath("//p[.='Dropped!']"));
         System.out.println("verifyMessage.getText() = " + verifyMessage.getText());
