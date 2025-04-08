@@ -30,7 +30,7 @@ public class BaseTest {
         options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
         // Создаём новый объект класса ChromeDriver
         driver = new ChromeDriver(options);
-        //driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10000));
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10000));
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         actions = new Actions(driver);
         js = (JavascriptExecutor) driver;

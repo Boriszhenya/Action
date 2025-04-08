@@ -48,7 +48,7 @@ public class ActionsTest extends BaseTest {
     }
 
     @Test
-    public void dragAndDropTest() {
+    public void dragAndDropTest()  {
 
         driver.get("https://demoqa.com/droppable");
 
@@ -89,7 +89,7 @@ public class ActionsTest extends BaseTest {
     }
 
     @Test
-    public void dragAndDropAnotherTest() {
+    public void dragAndDropAnotherTest()  {
 
         driver.get("https://demoqa.com/droppable");
 
